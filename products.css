@@ -4197,7 +4197,7 @@ body.site-en .products-all {
 .item-phone {
   display: inline-block;
   margin-right: 35px;
-  background: url(/typo3conf/ext/ttmpl/Resources/Public/Tmpl/images/ico-phone.png) no-repeat left center;
+  background: url(/typo3conf/ext/ttmpl/Resources/Public/Tmplimages/ico-phone.png) no-repeat left center;
   padding-left: 30px;
   text-decoration: none;
   line-height: 22px;
@@ -4205,7 +4205,7 @@ body.site-en .products-all {
 
 .item-email {
   display: inline-block;
-  background: url(/typo3conf/ext/ttmpl/Resources/Public/Tmpl/images/ico-email.png) no-repeat left center;
+  background: url(/typo3conf/ext/ttmpl/Resources/Public/Tmplimages/ico-email.png) no-repeat left center;
   padding-left: 30px;
   text-decoration: none;
   line-height: 22px;
@@ -5740,12 +5740,12 @@ blockquote {
 
 #main .owl-carousel .owl-nav button.owl-prev {
   left: -19px;
-  background: url('/images/icon05.png') no-repeat;
+  background: url('images/icon05.png') no-repeat;
 }
 
 #main .owl-carousel .owl-nav button.owl-next {
   right: -19px;
-  background: url('/images/icon13.png') no-repeat;
+  background: url('images/icon13.png') no-repeat;
 }
 
 #main #section4_8 {
@@ -5834,7 +5834,7 @@ blockquote {
 
 #main #section5_3 {
   padding: 93px 0 133px;
-  background: url('/images/img14.jpg') 80% center no-repeat;
+  background: url('images/img14.jpg') 80% center no-repeat;
   background-size: cover;
   color: white;
 }
