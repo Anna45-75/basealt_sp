@@ -1,0 +1,450 @@
+@import "style.less";
+
+p{
+	&.center{
+		text-align: center;
+	}
+}
+#main{
+	.main_banner{
+		height: 1px;
+		.container{
+			.flexbox;
+			align-items: center;
+			height: 100%;
+		}
+	}
+	.about{
+		background: url('img/bg1.png') no-repeat right -100px top -85px;
+		h1{
+            font-size: 24px;
+            line-height: 29px;
+            span{
+                font-size: 32px;
+                line-height: 39px;
+            }
+        }
+        strong{
+            font-size: 20px;
+            line-height: 26px;
+            font-weight: 500;
+        }
+		.blank{
+			padding: 30px;
+			margin-bottom: 30px;
+			height: auto;
+			&:last-child{
+				margin-bottom: 0px;
+			}
+			&.blank1{
+				max-width: 60%;
+			}
+			&.blank2{
+				max-width: 62%;
+			}
+			&.blank3{
+				padding: 40px 80px 0;
+			}
+			.item{
+				.flexbox;
+				align-items: center;
+				.icon_holder{
+					flex-shrink: 0;
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+	.numbers{
+		margin-top: -130px;
+		padding: 130px 0 60px;
+		background: url('img/alt8SP_p10_var3_1920x1080 2.png') no-repeat center center;
+		background-size: cover;
+		.row{
+			[class^="col"]{
+				margin-bottom: 60px;
+			}
+		}
+		.item{
+			text-align: center;
+			.num{
+				font-size: 48px;
+				font-weight: 500;
+				line-height: 123%;
+				color: #F3921A;
+			}
+		}
+	}
+	.structure{
+		.blank{
+			padding: 30px 370px 30px 30px;
+			background: url('img/Sisyphus.png') no-repeat right center;
+			background-size: cover;
+		}
+		p{
+            margin-bottom: 16px;
+            &:last-child{
+                margin-bottom: 0px;
+            }
+        }
+	}
+	.solutions{
+		margin-bottom: 28px;
+		.blank{
+			padding: 30px 30px;
+			.icon_holder{
+				flex-shrink: 0;
+				margin-bottom: 8px;
+				img{
+					width: auto;
+				}
+			}
+		}
+	}
+	.download{
+		a{
+			font-weight: 600;
+			position: relative;
+			&:after{
+				content: "";
+				width: 0;
+				height: 0;
+				border: 5px solid transparent;
+                border-left: 6px solid #F3921A;
+                border-right: none;
+                display: inline-block;
+                margin-left: 5px;
+			}
+		}
+	}
+	.education{
+		.blank{
+			padding: 30px 30px 30px 520px;
+			background: url('img/education.png') no-repeat left center;
+			background-size: cover;
+		}
+		p{
+            margin-bottom: 16px;
+            &:last-child{
+                margin-bottom: 0px;
+            }
+        }
+	}
+	.conference{
+		.blank{
+            .flexbox;
+            align-items: center;
+            padding: 20px 40px;
+            background: url('img/conference.png') no-repeat right center;
+            background-size: cover;
+        }
+        .btns{
+            justify-content: center;
+            .btn{
+                margin-bottom: 0;
+                background-color: rgba(255, 255, 255, 0.5);
+                width: 100%;
+                &:hover{
+                    border-color: #FFCC00;
+                    background: #FFCC00;
+                    color: #ffffff;
+                }
+            }
+        }
+        .holder{
+            flex-basis: 80%;
+            padding-right: 12%;
+            p{
+                font-size: 16px;
+                line-height: 140%;
+            }
+            .icon_holder{
+            	display: none;
+            	text-align: center;
+            	img{
+            		width: auto;
+            	}
+            }
+        }
+        .col{
+            flex-basis: 20%;
+            text-align: center;
+            img{
+                width: auto;
+            }
+        }
+	}
+	.associations{
+		h2{
+			margin-bottom: 15px;
+			+ h3{
+				font-size: 20px;
+				line-height: 140%;
+				padding-top: 0;
+				margin-bottom: 30px;
+			}
+		}
+		.blank{
+            padding: 40px 25px 20px;
+        }
+        .items{
+        	.flexbox;
+        	align-items: center;
+        	flex-wrap: wrap;
+        	justify-content: center;
+        	margin: 0 -20px;
+            .item{
+                margin: 0 20px 20px;
+                img{
+                    width: auto;
+                }
+            }
+            .js-marquee-wrapper{
+                .flexbox;
+                .js-marquee{
+                    float: none !important;
+                    .flexbox;
+                    align-items: center;
+                    .item{
+                        display: block;
+                    }
+                }
+            }
+        }
+	}
+	.prize{
+		margin-bottom: 0;
+		.row{
+			margin: 0 -9px;
+			.col33{
+				margin-bottom: 15px;
+			}
+			.inside{
+				margin: 0 9px;
+			}
+		}
+		.blank{
+			border: 1px solid #F3921A;
+			padding: 20px 26px;
+			min-height: 168px;
+		}
+	}
+}
+@media screen and (max-width: 960px){
+	#main{
+		.about{
+			background: none;
+			.blank{
+				&.blank1,
+				&.blank2{
+					max-width: none;
+				}
+				&.blank3{
+					padding: 40px 75px 10px;
+					.row{
+						flex-wrap: nowrap;
+						flex-direction: column;
+					}
+					.icon_holder{
+						max-width: 90px;
+					}
+				}
+			}
+			.right_holder{
+				.flexbox;
+				padding-top: 50px;
+				background: url('img/bg1_t.png') no-repeat left bottom -50px;
+				justify-content: flex-end;
+				&:after{
+				    content: "";
+				    display: block;
+				    height: 0;
+				    line-height: 0;
+				    clear: both;
+				}
+				.col{
+					max-width: 57%;
+				}
+			}
+		}
+		.numbers{
+			background: url('img/alt8SP_p10_var3_1920x1080 2_t.png') no-repeat center center;
+			background-size: cover;
+			margin-top: -280px;
+			padding-top: 280px;
+			.row{
+				margin-bottom: 30px;
+				.col33{
+					flex-basis: 50%;
+					margin-bottom: 10px;
+				}
+			}
+			p.center{
+				br{
+					display: none;
+				}
+			}
+		}
+		.structure{
+			.blank{
+				background: #ffffff;
+				padding-right: 30px;
+			}
+		} 
+		.solutions{
+			margin-bottom: 0;
+			.row{
+				flex-direction: column;
+			}
+			.blank{
+				.flexbox;
+				.icon_holder{
+					margin: 0 20px 0 0;
+				}
+			}
+		}
+		.education{
+			.blank{
+				padding: 360px 30px 30px;
+				background: url('img/education_t.png') no-repeat left top;
+				background-size: cover;
+			}
+		}
+		.conference{
+			.blank{
+				background: #ffffff;
+				flex-direction: column;
+				align-items: initial;
+				padding-top: 30px;
+				padding-bottom: 30px;
+			}
+			.holder{
+				.flexbox;
+				padding: 0;
+				margin-bottom: 30px;
+				.icon_holder{
+					flex-shrink: 0;
+					display: block;
+					margin-right: 17px;
+				}
+			}
+			.col{
+				img{
+					display: none;
+				}
+			}
+		} 
+		.prize{
+			.row{
+				.col33{
+					flex-basis: 50%;
+				}
+			}
+		}
+	} 
+}
+@media screen and (max-width: 768px){
+	#main{
+		.about{
+			.right_holder{
+				padding-top: 0;
+			}
+		}
+		.education{
+			.blank{
+				padding-top: 300px;
+			}
+		} 
+		.associations{
+			h2{
+				+ h3{
+					font-size: 16px;
+    				line-height: 120%;
+				}
+			}
+		}
+	} 
+}
+@media screen and (max-width: 640px){
+	#main{
+		.about{
+			.blank{
+				&.blank3{
+					padding: 28px 16px;
+					.item{
+						max-width: 308px;
+						flex-direction: column;
+						margin-left: auto;
+						margin-right: auto;
+						.icon_holder{
+							margin: 0 0 15px;
+						}
+						.text_holder{
+							text-align: center;
+						}
+					}
+				}
+			}
+
+			.right_holder{
+				display: block;
+				background: none;
+				.col{
+					max-width: none;
+				}
+			}
+		}
+		.numbers{
+			background: url('img/alt8SP_p10_var3_1920x1080 3.png') no-repeat center center;
+			background-size: cover;
+			.row{
+				flex-direction: column;
+			}
+			.item{
+				max-width: 340px;
+				margin: 0 auto 20px;
+			}
+			p.center{
+				max-width: 340px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		.solutions{
+			.blank{
+				flex-direction: column;
+				.icon_holder{
+					margin: 0 0 8px;
+					text-align: center;
+				}
+			}
+		} 
+		.download{
+			a{
+				&:after{
+					content: none;
+				}
+			}
+		} 
+		.education{
+			.blank{
+				padding-top: 55vw;
+				background: url('img/education_m.png') no-repeat center top;
+				background-size: cover;
+			}
+		}
+		.conference{
+			.holder{
+				flex-direction: column;
+				.icon_holder{
+					margin: 0 0 20px;
+				}
+			}
+		} 
+		.prize{
+			.row{
+				flex-direction: column;
+			}
+		}
+	} 
+}

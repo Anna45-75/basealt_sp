@@ -1,0 +1,214 @@
+@import "style.less";
+
+p{
+	&.center{
+		text-align: center;
+	}
+}
+#main{
+	.main_banner{
+		height: 1px;
+		.container{
+			.flexbox;
+			align-items: center;
+			height: 100%;
+		}
+	}
+	.contact{
+		margin-bottom: 0;
+		.blank{
+			padding: 30px;
+			margin-bottom: 30px;
+			height: auto;
+			&:last-child{
+				margin-bottom: 0px;
+			}
+			.holder{
+				.flexbox;
+				align-items: flex-start;
+				.icon_holder{
+					margin-right: 12px;
+				}
+			}
+			p{
+				margin-bottom: 16px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+		.phone{
+			font-size: 31px;
+			line-height: 123%;
+			font-weight: 500;
+		}
+		.chat{
+			padding: 15px 30px;
+			align-items: center;
+			.icon_holder{
+				margin-top: -15px;
+				margin-bottom: -15px;
+			}
+			ul{
+				li{
+					font-size: 20px;
+					font-weight: 500;
+					margin-bottom: 16px;
+					&:last-child{
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+		.feedback{
+			.flexbox;
+			flex-direction: column;
+			height: 100%;
+			.holder{
+				margin-bottom: 20px;
+				.icon_holder{
+					margin-top: -30px;
+					margin-left: -20px;
+				}
+			}
+			ul{
+				li{
+					font-size: 20px;
+					font-weight: 500;
+					margin-bottom: 16px;
+					&:last-child{
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	.map{
+		background: url('img/карта.png') no-repeat center top;
+		margin-bottom: 0;
+		padding-top: 289px;
+		.row{
+			margin: 0 -3px;
+			.col{
+				flex-grow: 1;
+				flex-basis: 100%;
+			}
+			.inside{
+				margin: 0 3px;
+			}
+		}
+		.blank{
+            display: block;
+            color: #333;
+			padding: 18px;
+			.holder{
+				.flexbox;
+				align-items: center;
+				margin-bottom: 8px;
+				min-height: 44px;
+				.icon_holder{
+					flex-shrink: 0;
+					margin-right: 12px;
+					
+					img{
+						width: auto;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 960px){
+	#main{
+		.contact{
+			.row{
+				flex-direction: column;
+			}
+			.blank{
+				max-width: 550px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+		}
+		.map{
+			.address{
+				max-width: 550px;
+				margin-right: auto;
+				margin-left: auto;
+			}
+			.row{
+				flex-wrap: wrap;
+				margin: 0 -22px;
+				justify-content: center;
+				.col{
+					flex-grow: 0;
+					flex-basis: 230px;
+					margin-bottom: 44px;
+				}
+				.inside{
+					margin: 0 22px;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 768px){
+	#main{
+	 	.map{
+			.row{
+				.col{
+					flex-basis: auto;
+				}
+			}
+			.blank{
+				.holder{
+					min-height: auto;
+				}
+				p{
+					br{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 640px){
+	#main{
+		.contact{
+			.chat{
+				.holder{
+					flex-direction: column;
+					.icon_holder{
+						margin: 0;
+						align-self: center;
+					}
+				}
+			}
+			.feedback{
+				.holder{
+					.icon_holder{
+						display: none;
+					}
+				}
+				.btns{
+					margin-bottom: 30px;
+					flex-grow: 1;
+					.btn{
+						flex-grow: 1;
+					}
+				}
+			}
+		} 
+	 	.map{
+			.address{
+				max-width: 233px;
+			}
+			.row{
+				.col{
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+}

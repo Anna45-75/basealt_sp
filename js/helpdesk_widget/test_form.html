@@ -1,0 +1,315 @@
+<html>
+<meta charset="utf-8">
+<head>
+    <meta charset=UTF-8>
+    <title>тестовая форма!</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<style>
+    #widget_form {
+        width:1000px;
+    }
+    #widget_form span {
+        color: #333;
+        padding-bottom: 3px;
+        margin-left: 3px;
+        font-size: 12px;
+    }
+
+</style>
+
+<span>
+   <div id="helpdesk_widget"></div>
+   <script type="text/javascript" src="https://oldmy.basealt.space/helpdesk_widget/widget.js"></script>
+</span>
+<script>
+    RedmineHelpdeskWidget.config({
+        color: '#ffca00',
+        translation: {
+            nameLabel: 'Укажите ваше ФИО',
+            emailLabel: 'Укажите email контактного лица',
+            createButtonLabel: 'Отправить',
+            createSuccessLabel: 'Ваш ответ принят, ответ вы получите на указанную Вами электронную почту.',
+            createSuccessDescription: 'Ответ вы получите на указанный вами email.',
+            createErrorLabel: 'Проверьте заполненные данные и повторите запрос:',
+            attachmentLinkLabel: 'Прикрепить файл'
+        },
+        identify: {
+            nameLabel: 'Введите ваше Имя и Фамилию',
+            trackerValue: 'Заявка ОО',
+            projectValue: 'Лицензии оо',
+            subjectValue: 'Заявка на выдачу лицензий на операционные системы «Альт» на безвозмездной основе.',
+            descriptionValue: 'Заявка на выдачу лицензий ',
+        },
+        attachment: true,
+        title: 'ОО демо форма',
+        privacy_policy: 'Я ознакомился с договором-офертой (ссылка) и согласен с его условиями.',
+        privacy_policy2: 'test'
+
+    });
+</script>
+<script>
+    $(window).on('load', function(){
+        setTimeout(function () {
+            var spans = document.querySelectorAll('span');
+            spans.forEach(function(span) {
+                if (span.textContent === "ИНН КПП ОО") {
+                    span.textContent = "ИНН КПП образовательной организации";
+                }
+                if (span.textContent === "Тип ОО") {
+                    span.textContent = "Тип образовательной организации";
+                }
+                if (span.textContent === "ФИО контактного лица") {
+                    span.textContent = "ФИО контактного лица ОО";
+                }
+                if (span.textContent === "Телефон контактного лица ОО") {
+                    span.textContent = "Телефон контактного лица ОО";
+                }
+                if (span.textContent === "Email контактного лица") {
+                    span.textContent = "Email контактного лица ОО";
+                }
+                if (span.textContent === "Email для оформления лицензий") {
+                    span.textContent = "Email для оформления лицензий";
+                }
+                if (span.textContent === "Кол-во Альт Обр(запрос)") {
+                    span.textContent = 'Кол-во "Альт Образование"';
+                }
+                if (span.textContent === "Кол-во Альт Р.ст(запрос)") {
+                    span.textContent = 'Кол-во "Альт Рабочая станция"';
+                }
+                if (span.textContent === "Лицензии будут использоваться") {
+                    span.textContent = "Как вы планируете использовать лицензии";
+                }
+            });
+
+            var newCheckbox = document.createElement('input');
+            newCheckbox.type = 'checkbox';
+            newCheckbox.id = 'additional_checkbox';
+            newCheckbox.name = 'additional_checkbox';
+            newCheckbox.value = '1';
+            newCheckbox.required = true;
+
+            var lineBreak = document.createElement('br');
+
+            var label = document.createElement('label');
+            label.htmlFor = 'additional_checkbox';
+            label.appendChild(document.createTextNode('Я ознакомился и принимаю '));
+
+            var link = document.createElement('a');
+            link.href = "https://www.basealt.ru/about/policy";
+            link.className = "external";
+            link.target = "_blank";
+            link.appendChild(document.createTextNode("политику обработки персональных данных"));
+
+            var parentElement = document.getElementById('privacy_policy_fields');
+            parentElement.appendChild(lineBreak);
+            parentElement.appendChild(newCheckbox);
+            parentElement.appendChild(label);
+            label.appendChild(link);
+
+            const usernameInput = document.getElementById('flash');
+            const emailInput = document.getElementById('username');
+
+            const usernameSpan = document.createElement('span');
+            usernameSpan.textContent = 'ФИО контактного лица ОО *';
+            usernameSpan.classList.add('field-description');
+
+            const emailSpan = document.createElement('span');
+            emailSpan.textContent = 'Email контактного лица ОО *';
+            emailSpan.classList.add('field-description');
+
+            usernameInput.insertAdjacentElement('afterend', usernameSpan);
+            emailInput.insertAdjacentElement('afterend', emailSpan);
+
+// Проверка телефона
+            const inputField = document.getElementById('issue_custom_field_values_912');
+
+            function initializeFormat() {
+                if (inputField.value.replace(/\D/g, '').length === 0) {
+                    inputField.value = '+7 (___) ___-__-__';
+                }
+            }
+
+            function formatPhoneNumber(event) {
+                let inputNumbersValue = inputField.value.replace(/\D/g, '');
+
+                let formattedInputValue = '+7 (';
+
+                if (inputNumbersValue.length > 1) {
+                    formattedInputValue += `${inputNumbersValue.substring(1, 4)}`;
+                }
+                if (inputNumbersValue.length >= 4) {
+                    formattedInputValue += `) ${inputNumbersValue.substring(4, 7)}`;
+                }
+                if (inputNumbersValue.length >= 7) {
+                    formattedInputValue += `-${inputNumbersValue.substring(7, 9)}`;
+                }
+                if (inputNumbersValue.length >= 9) {
+                    formattedInputValue += `-${inputNumbersValue.substring(9, 11)}`;
+                }
+
+                inputField.value = formattedInputValue;
+            }
+
+            inputField.addEventListener('focus', initializeFormat);
+
+            inputField.addEventListener('input', formatPhoneNumber);
+// Проверка ИНН
+            const existingDiv = document.getElementById("issue_custom_field_values_909");
+            const newDivId = "newDivId";
+
+            const newDiv = document.createElement("div");
+            newDiv.id = "Tooltip1";
+
+            const parentDiv = existingDiv.parentElement;
+
+            parentDiv.insertBefore(newDiv, existingDiv.nextSibling);
+
+            $("#issue_custom_field_values_909").bind('input', function(e) {
+                setTimeout(() => { $(e.target).keyup(); }, 300);
+            });
+
+            $("#issue_custom_field_values_909").on('keyup', function(e) {
+                const result = is_valid_inn(this.value)
+                this.style.backgroundColor = result[0] ? '#dfd' : '#fdd'
+                document.getElementById("Tooltip1").textContent = result[1];
+            });
+
+            document.getElementById('form-submit-btn').addEventListener('click', checkInnf1, false);
+
+            function checkInnf1(event) {
+                const result = is_valid_inn(document.getElementById('issue_custom_field_values_909').value)
+                if (result[0] == false){
+                    event.preventDefault();
+                    alert('Неверный ИНН КПП образовательной организации');
+                } else { console.log('ИНН-КПП заказчика ОК');}
+            }
+
+// Функция для проверки правильности ИНН
+            function is_valid_inn(input) {
+                var parts = input.split(' ');
+                var inn = parts[0];
+                var kpp = parts[1];
+
+                if (inn.length == 12)
+                {
+                    const hasLeadingTrailingSpaces = input.trim() !== input;
+                    if (hasLeadingTrailingSpaces) {
+                        return [false, "Поле содержит лишние пробелы в начале или в конце строки." ];
+                    }
+                    return validateInn(inn);
+
+                }
+
+                const hasLeadingTrailingSpaces = input.trim() !== input;
+                if (hasLeadingTrailingSpaces && kpp.length == 9) {
+                    return [false, "Поле содержит лишние пробелы в начале или в конце строки." ];
+                }
+
+                const extraSpaces = input.match(/\s\s+/g)
+                if (extraSpaces) {
+                    return [false, "Содержит лишний пробел между инн и кпп" ];
+                }
+
+                if (validateInn(inn)[0] == true && validateKpp(kpp)[0] == false) {
+
+                    return validateKpp(kpp);
+                }
+                else if (validateInn(inn)[0] == false && validateKpp(kpp)[0] == true) {
+
+                    return validateInn(inn);
+                }
+                else if (validateInn(inn)[0] == false && validateKpp(kpp)[0] == false) {
+
+                    return validateInn(inn);
+                }
+                else {
+                    return [true, ' '];
+                }
+
+            }
+
+            function validateInn(inn) {
+                var result = false;
+                if (typeof inn === 'number') {
+                    inn = inn.toString();
+                } else if (typeof inn !== 'string') {
+                    inn = '';
+                }
+                if (!inn.length) {
+                    error = 'ИНН пуст или содержит пробел';
+                } else if (/[^0-9]/.test(inn)) {
+                    error = 'ИНН может состоять только из цифр';
+                } else if ([10, 12].indexOf(inn.length) === -1) {
+                    error = 'ИНН может состоять только из 10 или 12 цифр';
+                } else {
+                    var checkDigit = function (inn, coefficients) {
+                        var n = 0;
+                        for (var i in coefficients) {
+                            n += coefficients[i] * inn[i];
+                        }
+                        return parseInt(n % 11 % 10);
+                    };
+                    switch (inn.length) {
+                        case 10:
+                            var n10 = checkDigit(inn, [2, 4, 10, 3, 5, 9, 4, 6, 8]);
+                            if (n10 === parseInt(inn[9])) {
+                                result = true;
+                            }
+                            break;
+                        case 12:
+                            var n11 = checkDigit(inn, [7, 2, 4, 10, 3, 5, 9, 4, 6, 8]);
+                            var n12 = checkDigit(inn, [3, 7, 2, 4, 10, 3, 5, 9, 4, 6, 8]);
+                            if ((n11 === parseInt(inn[10])) && (n12 === parseInt(inn[11]))) {
+                                result = true;
+                            }
+                            break;
+                    }
+                    if (!result) {
+                        error = 'Неправильное контрольное число, проверьте правильность ввода инн';
+                    }
+                }
+                if (result == false)
+                {
+                    return [result, error];
+                }
+                else
+                {
+                    return [result,' '];
+                }
+            }
+
+            function validateKpp(kpp) {
+                var result = false;
+                if (typeof kpp === 'number') {
+                    kpp = kpp.toString();
+                } else if (typeof kpp !== 'string') {
+                    kpp = '';
+                }
+                if (!kpp.length) {
+                    error = 'КПП пуст добавьте через пробел';
+                } else if (kpp.length !== 9) {
+                    error = 'КПП может состоять только из 9 знаков (цифр или заглавных букв латинского алфавита от A до Z)';
+
+                } else if (!/^[0-9]{4}[0-9A-Z]{2}[0-9]{3}$/.test(kpp)) {
+                    error = 'Неправильный формат КПП';
+                } else {
+                    result = true;
+                }
+                if (result == false)
+                {
+                    return [result, error];
+                }
+                else
+                {
+                    return [result,' '];
+                }
+            }
+
+        }, 200);
+    });
+
+</script>
+</body>
+</html>
