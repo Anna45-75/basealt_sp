@@ -4914,8 +4914,8 @@ blockquote {
 }
 
 #main.product .docum_top {
-  width: 100%;
   text-align: right;
+  margin-top: 60px;
 }
 
 #main.product .docum_top img {
@@ -5232,7 +5232,7 @@ blockquote {
 }
 
 #section9_5 {
-  background: url('img/Frame 313.jpg') no-repeat center;
+  background: url('img/Frame 313.jpg') no-repeat left;
   background-size: 100% 80%;
   padding: 0;
 }
@@ -5965,16 +5965,6 @@ blockquote {
   }
 }
 
-@media screen and (max-width: 768px) {
-  #main #section5_2 .columns3 {
-    column-count: 1;
-  }
-
-  #main #section5_2 .columns3 .title {
-    margin-bottom: 40px;
-  }
-}
-
 @media screen and (max-width: 640px) {
   #section9_2 .item {
     flex-direction: column;
@@ -6040,6 +6030,16 @@ blockquote {
 
 }
 
+@media screen and (max-width: 768px) {
+  #main #section5_2 .columns3 {
+    column-count: 1;
+  }
+
+  #main #section5_2 .columns3 .title {
+    margin-bottom: 40px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   #main #section4_4 .row {
     margin: 0 -16px;
@@ -6051,5 +6051,74 @@ blockquote {
 
   #main #section6_1 .row {
     flex-direction: column;
+  }
+}
+
+
+.table_holder {
+  width: 100%;
+}
+
+.table_holder_720 {
+  display: none;
+}
+
+.table_holder .line {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.table_holder .line .box {
+  height: 110px;
+  padding: 10px;
+  border: solid 4px #f6f6f6;
+  font-size: 14px;
+  text-align: center;
+}
+
+.table_holder .line .box:nth-child(1) {
+  width: 20%;
+}
+
+.table_holder .line .box:nth-child(2) {
+  width: 15%;
+}
+
+.table_holder .line .box:nth-child(3) {
+  width: 30%;
+}
+
+.table_holder .line .box:nth-child(4) {
+  width: 30%;
+}
+
+.p_table {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 640px) {
+
+  .table_holder {
+    display: none;
+  }
+
+  .table_holder_720 {
+    display: block;
+    width: 100%;
+  }
+
+  .table_holder_720 .line {
+    display: flex;
+    max-width: 100%;
+  }
+
+  .table_holder_720 .line .box {
+    padding: 10px;
+    border: solid 4px #f6f6f6;
+    font-size: 12px;
+    height: auto;
+    width: 50%;
   }
 }

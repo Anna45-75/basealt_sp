@@ -93,8 +93,8 @@ a.disable {
 }
 
 /*.container .blank a:hover{
-    text-decoration: underline;
-}*/
+      text-decoration: underline;
+  }*/
 
 .container .blank .news_item a:hover,
 .container .blank .news_archive a:hover {
@@ -358,8 +358,8 @@ h5 {
 section {
     margin-bottom: 60px;
     /*&:last-child{
-        margin-bottom: 0;
-    }*/
+          margin-bottom: 0;
+      }*/
 
 }
 
@@ -862,17 +862,17 @@ form .btn {
 
 .btn.secondary {
     /*border-color: #F3921A;
-        background: transparent;
-        color: #333333;
-        &:hover{
-            border-color: #FFCC00;
-            background: transparent;
-        }
-        &:active{
-            border-color: #F9AE0E;
-            background: transparent;
-            color: #333333;
-        }*/
+          background: transparent;
+          color: #333333;
+          &:hover{
+              border-color: #FFCC00;
+              background: transparent;
+          }
+          &:active{
+              border-color: #F9AE0E;
+              background: transparent;
+              color: #333333;
+          }*/
     border-color: #f3921a;
     background: rgba(255, 255, 255, 0.692);
     color: #333333;
@@ -1537,25 +1537,25 @@ form .btn {
     position: relative;
     margin-bottom: 70px;
     /*.owl-nav{
-        button{
-            position: absolute;
-            top: 50%;
-            width: 19px;
-            height: 35px;
-            margin-top: -18px;
-            span{
-                display: none;
-            }
-            &.owl-prev{
-                left: 30px;
-                background: url('images/icon33.png') no-repeat;
-            }
-            &.owl-next{
-                right: 30px;
-                background: url('images/icon34.png') no-repeat;
-            }
-        }
-    }*/
+          button{
+              position: absolute;
+              top: 50%;
+              width: 19px;
+              height: 35px;
+              margin-top: -18px;
+              span{
+                  display: none;
+              }
+              &.owl-prev{
+                  left: 30px;
+                  background: url('images/icon33.png') no-repeat;
+              }
+              &.owl-next{
+                  right: 30px;
+                  background: url('images/icon34.png') no-repeat;
+              }
+          }
+      }*/
 
 }
 
@@ -4369,7 +4369,7 @@ blockquote {
 
 #main.product .border {
     /*border: 1px solid #8a8e8f;
-  border-radius: 14px;*/
+    border-radius: 14px;*/
 }
 
 #main.product .spanel {
@@ -4914,8 +4914,8 @@ blockquote {
 }
 
 #main.product .docum_top {
-    width: 100%;
     text-align: right;
+    margin-top: 60px;
 }
 
 #main.product .docum_top img {
@@ -5232,7 +5232,7 @@ blockquote {
 }
 
 #section9_5 {
-    background: url('img/Frame 313.jpg') no-repeat center;
+    background: url('img/73-01-01.png') no-repeat left;
     background-size: 100% 80%;
     padding: 0;
 }
@@ -5965,16 +5965,6 @@ blockquote {
     }
 }
 
-@media screen and (max-width: 768px) {
-    #main #section5_2 .columns3 {
-        column-count: 1;
-    }
-
-    #main #section5_2 .columns3 .title {
-        margin-bottom: 40px;
-    }
-}
-
 @media screen and (max-width: 640px) {
     #section9_2 .item {
         flex-direction: column;
@@ -6040,6 +6030,16 @@ blockquote {
 
 }
 
+@media screen and (max-width: 768px) {
+    #main #section5_2 .columns3 {
+        column-count: 1;
+    }
+
+    #main #section5_2 .columns3 .title {
+        margin-bottom: 40px;
+    }
+}
+
 @media screen and (max-width: 480px) {
     #main #section4_4 .row {
         margin: 0 -16px;
@@ -6051,5 +6051,74 @@ blockquote {
 
     #main #section6_1 .row {
         flex-direction: column;
+    }
+}
+
+
+.table_holder {
+    width: 100%;
+}
+
+.table_holder_720 {
+    display: none;
+}
+
+.table_holder .line {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.table_holder .line .box {
+    height: 110px;
+    padding: 10px;
+    border: solid 4px #f6f6f6;
+    font-size: 14px;
+    text-align: center;
+}
+
+.table_holder .line .box:nth-child(1) {
+    width: 20%;
+}
+
+.table_holder .line .box:nth-child(2) {
+    width: 15%;
+}
+
+.table_holder .line .box:nth-child(3) {
+    width: 30%;
+}
+
+.table_holder .line .box:nth-child(4) {
+    width: 30%;
+}
+
+.p_table {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 640px) {
+
+    .table_holder {
+        display: none;
+    }
+
+    .table_holder_720 {
+        display: block;
+        width: 100%;
+    }
+
+    .table_holder_720 .line {
+        display: flex;
+        max-width: 100%;
+    }
+
+    .table_holder_720 .line .box {
+        padding: 10px;
+        border: solid 4px #f6f6f6;
+        font-size: 12px;
+        height: auto;
+        width: 50%;
     }
 }
