@@ -4495,7 +4495,6 @@ blockquote {
     bottom: 12px;
     text-decoration: none;
     color: #f3921a;
-    font-weight: 600;
 }
 
 #main.product .include .slides .item .more .icn {
@@ -5077,7 +5076,7 @@ blockquote {
 @media screen and (max-width: 640px) {
     #main.product .main_banner {
         padding: 40px 0 40px;
-        background: url(/img/bg_products-01.png) no-repeat right;
+        background: url(/img/bg_products-03.png) no-repeat right;
         position: unset;
         height: auto;
     }
@@ -5214,7 +5213,6 @@ blockquote {
 
 #section9_2 a {
     color: #f3921a;
-    font-weight: 600;
 }
 
 #section9_2 .item {
@@ -5270,7 +5268,6 @@ blockquote {
 
 #section9_5 .item .text_holder a {
     color: #f3921a;
-    font-weight: 600;
 }
 
 #section9_9 {
