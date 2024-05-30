@@ -5072,7 +5072,7 @@ blockquote {
 @media screen and (max-width: 640px) {
     #main.product .main_banner {
         padding: 40px 0 40px;
-        background: url(/img/bg_products-03.png) no-repeat right;
+        background: url(img/bg_products-03.png) no-repeat right;
         position: unset;
         height: auto;
     }
